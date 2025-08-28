@@ -15,23 +15,23 @@ build-qwt-Desktop-Debug
 ---
 
 ## Prerequisites
-
+```bash
 sudo apt update 
 sudo apt upgrade -y 
 sudo apt install aptitude
 sudo apt install python3 python3-pip 
 sudo apt install -y build-essential git wget cmake meson ninja-build 
-
+```
 ---
 
 ## Dependencies
 
 ### Install GStreamer
-
+```bash
 sudo aptitude install libgstreamer1.0-dev 
-
+```
 ### Build libpng from source
-
+```bash
 sudo apt install zlib1g-dev 
 #open terminal in folder with libpng-1.4.22.tar.gz  
 tar -xzf libpng-1.4.22.tar.gz 
@@ -39,9 +39,9 @@ cd libpng-1.4.22
 ./configure --prefix=/usr 
 make -j$(nproc) 
 sudo make install 
-
+```
 ### FFmpeg 4.4
-
+```bash
 sudo apt remove --purge ffmpeg libavcodec-dev libavformat-dev libavutil-dev 
 sudo apt update 
 sudo apt install -y \ 
@@ -79,24 +79,24 @@ sudo make install
 sudo ldconfig 
 
 ffmpeg -version 
-
+```
 ### OpenCV 4.5.0
-
+```bash
 #open terminal in folder with OpenCV-4-5-0.sh  
 chmod +x OpenCV-4-5-0.sh 
 sudo ./OpenCV-4-5-0.sh 
-
+```
 ---
 
 ## Qt Required Modules / Libraries
-
+```bash
 sudo apt update 
 sudo apt install libsdl2-dev 
 sudo apt install qtpositioning5-dev qtlocation5-dev 
 sudo apt install qml-module-qtquick-dialogs qml-module-qtmultimedia \ 
     qml-module-qtquick-controls qml-module-qtquick-controls2 \  
     qml-module-qtquick-window2  
-
+```
 ---
 
 
