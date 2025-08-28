@@ -1,4 +1,4 @@
-# OrangePi 5 mapDev BUILD SETUP
+# 🍊OrangePi 5 mapDev BUILD SETUP
 
 **ISO:** Ubuntu 22.04 LTS Desktop with Linux 5.10
 [Download link](https://joshua-riek.github.io/ubuntu-rockchip-download/boards/orangepi-5.html)
@@ -14,7 +14,7 @@ build-qwt-Desktop-Debug
 
 ---
 
-## Prerequisites
+## 📦Prerequisites
 ```bash
 sudo apt update 
 sudo apt upgrade -y 
