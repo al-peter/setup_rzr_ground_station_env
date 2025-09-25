@@ -56,7 +56,7 @@ sudo ldconfig
 
 sudo apt update 
 sudo apt install autoconf automake build-essential cmake git libass-dev libfreetype6-dev
-sudo apt install  libgnutls28-dev libmp3lame-dev libnuma-dev libopus-dev libtheora-dev   
+sudo apt install libgnutls28-dev libmp3lame-dev libnuma-dev libopus-dev libtheora-dev   
 sudo apt install libtool libvorbis-dev libvpx-dev pkg-config texinfo wget yasm zlib1g-dev   
 sudo apt install libx264-dev libx265-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev  
 
@@ -104,10 +104,8 @@ sudo apt update
 sudo apt install libsdl2-dev 
 sudo apt install qtpositioning5-dev qtlocation5-dev 
 sudo apt install qml-module-qtquick-dialogs qml-module-qtmultimedia  
-sudo apt install qml-module-qtquick-controls qml-module-qtquick-controls2   
-sudo apt install qml-module-qtquick-window2 qml-module-qtpositioning qml-module-qtlocation 
-sudo apt install qtpositioning5-plugins libqt5positioning5 libqt5location5 
+sudo apt install qml-module-qtquick-controls qml-module-qtquick-controls2 qml-module-qtquick-window2   
+sudo apt install qml-module-qtpositioning qml-module-qtlocation libqt5positioning5 libqt5location5 
 sudo apt install qml-module-qtgraphicaleffects qml-module-qt-labs-settings qml-module-qt-labs-platform 
-
 ```
 ---
