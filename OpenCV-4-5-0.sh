@@ -53,6 +53,9 @@ mv opencv_contrib-4.5.0 opencv_contrib
 rm opencv.zip
 rm opencv_contrib.zip
 
+export PKG_CONFIG_PATH=/opt/ffmpeg-4.4/lib/pkgconfig:$PKG_CONFIG_PATH
+export LD_LIBRARY_PATH=/opt/ffmpeg-4.4/lib:$LD_LIBRARY_PATH
+
 # set install dir
 cd ~/opencv
 mkdir build
