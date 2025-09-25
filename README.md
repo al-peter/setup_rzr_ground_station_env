@@ -29,6 +29,11 @@ sudo apt install -y build-essential git wget cmake meson ninja-build
 ### Install GStreamer
 ```bash
 sudo aptitude install libgstreamer1.0-dev 
+sudo apt install librga-dev librga2
+sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev gstreamer1.0-tools 
+sudo apt install gstreamer1.0-plugins-base gstreamer1.0-plugins-good 
+sudo apt install gstreamer1.0-plugins-bad  gstreamer1.0-plugins-ugly 
+sudo apt install gstreamer1.0-libav
 ```
 ### Build libpng from source
 ```bash
@@ -43,18 +48,17 @@ sudo make install
 ### FFmpeg 4.4
 ```bash
 sudo apt remove --purge ffmpeg libavcodec-dev libavformat-dev libavutil-dev 
-sudo rm -f /usr/lib/libavcodec.a /usr/lib/libavformat.a /usr/lib/libavutil.a \
-           /usr/lib/libswscale.a /usr/lib/libswresample.a /usr/lib/libavfilter.a \
-           /usr/lib/libpostproc.a 2>/dev/null
+sudo rm -f /usr/lib/libavcodec.a /usr/lib/libavformat.a /usr/lib/libavutil.a 
+sudo rm -f /usr/lib/libswscale.a /usr/lib/libswresample.a /usr/lib/libavfilter.a 
+sudo rm -f /usr/lib/libpostproc.a 2>/dev/null
 sudo rm -f /usr/lib/pkgconfig/libav*.pc /usr/lib/pkgconfig/libsw*.pc 2>/dev/null
 sudo ldconfig
 
 sudo apt update 
-sudo apt install -y \ 
-    autoconf automake build-essential cmake git libass-dev libfreetype6-dev \  
-    libgnutls28-dev libmp3lame-dev libnuma-dev libopus-dev libtheora-dev \  
-    libtool libvorbis-dev libvpx-dev pkg-config texinfo wget yasm zlib1g-dev \  
-    libx264-dev libx265-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev  
+sudo apt install autoconf automake build-essential cmake git libass-dev libfreetype6-dev
+sudo apt install  libgnutls28-dev libmp3lame-dev libnuma-dev libopus-dev libtheora-dev   
+sudo apt install libtool libvorbis-dev libvpx-dev pkg-config texinfo wget yasm zlib1g-dev   
+sudo apt install libx264-dev libx265-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev  
 
 cd /tmp 
 wget https://ffmpeg.org/releases/ffmpeg-4.4.tar.bz2 
@@ -99,11 +103,11 @@ sudo ./OpenCV-4-5-0.sh
 sudo apt update 
 sudo apt install libsdl2-dev 
 sudo apt install qtpositioning5-dev qtlocation5-dev 
-sudo apt install qml-module-qtquick-dialogs qml-module-qtmultimedia \ 
-                 qml-module-qtquick-controls qml-module-qtquick-controls2 \  
-                 qml-module-qtquick-window2 qml-module-qtpositioning qml-module-qtlocation \
-                 qtpositioning5-plugins libqt5positioning5 libqt5location5 \
-                 qml-module-qtgraphicaleffects qml-module-qt-labs-settings qml-module-qt-labs-platform \
+sudo apt install qml-module-qtquick-dialogs qml-module-qtmultimedia  
+sudo apt install qml-module-qtquick-controls qml-module-qtquick-controls2   
+sudo apt install qml-module-qtquick-window2 qml-module-qtpositioning qml-module-qtlocation 
+sudo apt install qtpositioning5-plugins libqt5positioning5 libqt5location5 
+sudo apt install qml-module-qtgraphicaleffects qml-module-qt-labs-settings qml-module-qt-labs-platform 
 
 ```
 ---
