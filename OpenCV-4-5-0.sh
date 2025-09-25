@@ -1,4 +1,44 @@
 #!/bin/bash
+set -e
+install_opencv () {
+echo ""
+case `cat /etc/debian_version` in
+10*) echo "Detecting Debian 10, Buster. "
+	;;
+11*) echo "Detecting Debian 11, Bullseye. "
+	;;
+12*) echo "Detecting Debian 12, Bookworm. "
+	;;
+esac
+echo ""
+echo "Installing OpenCV 4.5.0"
+echo "It will take minimal 1.5 hour !"
+cd ~
+# install the dependencies
+sudo apt-get install -y build-essential cmake git unzip pkg-config
+sudo apt-get install -y libjpeg-dev libtiff-dev libpng-dev
+#sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev
+sudo apt-get install -y libgtk2.0-dev libcanberra-gtk* libgtk-3-dev
+sudo apt-get install -y libgstreamer1.0-dev gstreamer1.0-gtk3
+sudo apt-get install -y libgstreamer-plugins-base1.0-dev gstreamer1.0-gl
+sudo apt-get install -y libxvidcore-dev libx264-dev
+sudo apt-get install -y python3-dev python3-numpy python3-pip
+sudo apt-get install -y libv4l-dev v4l-utils
+sudo apt-get install -y libopenblas-dev libatlas-base-dev libblas-dev
+sudo apt-get install -y liblapack-dev gfortran libhdf5-dev
+sudo apt-get install -y libprotobuf-dev libgoogle-glog-dev libgflags-dev
+sudo apt-get install -y protobuf-compiler
+#get TBB
+case `cat /etc/debian_version` in
+10*) sudo apt-get install -y libtbb2 libtbb-dev libdc1394-22-dev
+	;;
+11*) sudo apt-get install -y libtbb2 libtbb-dev libdc1394-22-dev
+	;;
+12*) sudo apt-get install -y libtbbmalloc2 libtbb-dev
+	;;
+esac
+
+# download the latest version
 cd ~ 
 sudo rm -rf opencv*
 wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.0.zip 
@@ -15,7 +55,7 @@ rm opencv_contrib.zip
 
 # set install dir
 cd ~/opencv
-mkdir -p build
+mkdir build
 cd build
 
 # run cmake
@@ -26,8 +66,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D WITH_OPENMP=ON \
 -D BUILD_TIFF=ON \
 -D WITH_FFMPEG=ON \
--D FFMPEG_INCLUDE_DIR=/usr/include \
--D FFMPEG_LIB_DIR=/usr/lib \
 -D WITH_TBB=ON \
 -D BUILD_TBB=ON \
 -D BUILD_TESTS=OFF \
@@ -47,7 +85,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D BUILD_EXAMPLES=OFF ..
 
 # run make
-make -j 8
+make -j"$(nproc)"
 sudo make install
 sudo ldconfig
 
@@ -56,7 +94,8 @@ make clean
 sudo apt-get update
 
 echo "Congratulations!"
-echo "You've successfully installed OpenCV 4.5.0 on your Raspberry Pi 64-bit OS"
+echo "You've successfully installed OpenCV 4.5.0 on your OrangePi 5/Raspberry Pi"
+}
 
 cd ~
 
@@ -77,4 +116,3 @@ if [ -d ~/opencv/build ]; then
 else
     install_opencv
 fi
-
